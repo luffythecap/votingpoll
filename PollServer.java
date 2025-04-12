@@ -23,7 +23,7 @@ public class PollServer {
 
     static class HomeHandler implements HttpHandler {
         public void handle(HttpExchange exchange) throws IOException {
-            File file = new File("public/index.html");
+            File file = new File("index.html");
             byte[] response = java.nio.file.Files.readAllBytes(file.toPath());
             exchange.getResponseHeaders().set("Content-Type", "text/html");
             exchange.sendResponseHeaders(200, response.length);
